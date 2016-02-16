@@ -7,25 +7,34 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * Created by Haim.Turkel on 2/16/2016.
  */
 @SpringBootApplication
-@Configuration
+@EnableAsync
 @ComponentScan("com.tikal")
 public class Application {
     static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         logger.info("start");
+        SpringApplication.run(Application.class, args);
+    }
+
+    @PostConstruct
+    @Async
+    public void init(){
         try {
-            Slacklog.log("test message");
-        } catch (IOException e) {
+            Slacklog.log("Start TTT Spring Boot");
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-        SpringApplication.run(Application.class, args);
     }
 }
