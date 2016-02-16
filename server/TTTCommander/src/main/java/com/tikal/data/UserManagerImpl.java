@@ -46,7 +46,7 @@ public class UserManagerImpl implements UserManager {
 
 
     private List<UserInfo> readCsvFile(File currentFile) {
-        List<UserInfo> users = new LinkedList<>();
+        List<UserInfo> users = new LinkedList<UserInfo>();
         try {
             Reader fileReader = new FileReader(currentFile);
             CSVFormat csvFileFormat = CSVFormat.DEFAULT.withHeader(FILE_HEADER_MAPPING);
@@ -114,7 +114,7 @@ public class UserManagerImpl implements UserManager {
         File currentMonth = new File(user, yearMonthFormat.format(userInfo.getIn()) + ".csv");
         List<UserInfo> users = readCsvFile(currentMonth);
         if (users == null) {
-            users = new ArrayList<>();
+            users = new ArrayList<UserInfo>();
         }
         users.add(userInfo);
         writeCsvFile(users, currentMonth);
