@@ -36,7 +36,7 @@ public class UserManager {
             users.mkdirs();
         }
 
-        saveUser(new UserInfo("chaim", "TMS", new Date(), new Date()));
+//        saveUser(new UserInfo("chaim", "TMS", new Date(), new Date()));
 
     }
 
