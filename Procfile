@@ -1,1 +1,1 @@
-web:    java -jar target/ttt.commander-1.0-SNAPSHOT.jar
+web:    java -jar server/TTTCommander/target/ttt.commander-1.0-SNAPSHOT.jar
