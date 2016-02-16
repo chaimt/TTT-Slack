@@ -11,5 +11,5 @@ public interface UserManager {
     public void saveUser(UserInfo userInfo);
     public void setDefaultProject(String userName, String project);
     public void generateReport(String userName, Date yearMonth);
-    public void ValidateReport(String userName, Date yearMonth);
+    public void validateReport(String userName, Date yearMonth);
 }

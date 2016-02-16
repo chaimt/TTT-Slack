@@ -1,10 +1,12 @@
 package com.tikal.data;
 
+import com.tikal.api.TimeTracker;
 import com.tikal.api.UserManager;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,9 @@ import java.util.List;
  */
 @Service
 public class UserManagerImpl implements UserManager {
+
+    @Autowired
+    TimeTracker tracker;
 
     @Value("${users.dir}")
     private String userDir;
@@ -118,6 +123,8 @@ public class UserManagerImpl implements UserManager {
         }
         users.add(userInfo);
         writeCsvFile(users, currentMonth);
+        String login = tracker.login();
+        tracker.submitTime(login);
 
     }
 
@@ -132,7 +139,7 @@ public class UserManagerImpl implements UserManager {
     }
 
     @Override
-    public void ValidateReport(String userName, Date yearMonth) {
+    public void validateReport(String userName, Date yearMonth) {
 
     }
 }

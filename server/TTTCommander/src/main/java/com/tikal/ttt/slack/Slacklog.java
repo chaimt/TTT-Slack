@@ -1,15 +1,9 @@
 package com.tikal.ttt.slack;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.StringReader;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class Slacklog{
 
