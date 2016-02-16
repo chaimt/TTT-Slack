@@ -1,5 +1,6 @@
 package com.tikal.data;
 
+import com.tikal.api.UserManager;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
@@ -19,7 +20,7 @@ import java.util.List;
  * Created by Haim.Turkel on 2/16/2016.
  */
 @Service
-public class UserManager {
+public class UserManagerImpl implements UserManager {
 
     @Value("${users.dir}")
     private String userDir;
@@ -117,6 +118,21 @@ public class UserManager {
         }
         users.add(userInfo);
         writeCsvFile(users, currentMonth);
+
+    }
+
+    @Override
+    public void setDefaultProject(String userName, String project) {
+
+    }
+
+    @Override
+    public void generateReport(String userName, Date yearMonth) {
+
+    }
+
+    @Override
+    public void ValidateReport(String userName, Date yearMonth) {
 
     }
 }
