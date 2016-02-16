@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import com.tikal.ttt.slack;
 
 /**
  * Created by Haim.Turkel on 2/16/2016.
@@ -18,6 +19,7 @@ public class Application {
 
     public static void main(String[] args) {
         logger.info("start");
+        slacklog:log("test message");
         SpringApplication.run(Application.class, args);
     }
 }
