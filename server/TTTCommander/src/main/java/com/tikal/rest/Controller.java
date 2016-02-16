@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 
 
 @RestController
@@ -20,7 +21,8 @@ class Controller {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String add(HttpServletRequest request, @RequestBody String input) {
-		logger.info(input);
+        Enumeration<String> headerNames = request.getHeaderNames();
+        logger.info(input);
 //		userManager.saveUser();
 		return  "hellow Slak";
 	}
