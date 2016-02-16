@@ -1,4 +1,4 @@
-package rest;
+package com.tikal.rest;
 
 import com.tikal.api.UserManager;
 import com.tikal.ttt.configuration.Application;
@@ -26,6 +26,11 @@ class Controller {
 		return  "hellow Slak";
 	}
 
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String test(){
+        return "test";
+    }
 }
 
 
