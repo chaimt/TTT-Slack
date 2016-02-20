@@ -37,7 +37,7 @@ public class Application {
     @Async
     public void init(){
         try {
-            Slacklog.log("Start TTT Spring Boot: " + InetAddress.getLocalHost().getHostName());
+//            Slacklog.log("Start TTT Spring Boot: " + InetAddress.getLocalHost().getHostName());
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
